@@ -82,7 +82,7 @@ Introduction：3D 数据通常有许多种表现形式：深度图、点云、�
 
 **2.2.5 其它网络**
 
-![](https://oj84-1259326782.cos.ap-chengdu.myqcloud.com/uPic/2021/07_15_v2-b232d5a1b6548bdf4b3aa2957af8f9a6_r.jpg)
+![](https://oj84-1259326782.cos.ap-chengdu.myqcloud.com/uPic/2021/07_15_07_15_v2-b232d5a1b6548bdf4b3aa2957af8f9a6_r.jpg)
 
 **3 3D 物体检测与跟踪**
 
