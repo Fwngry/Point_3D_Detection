@@ -6,7 +6,7 @@ Introduction：3D 数据通常有许多种表现形式：深度图、点云、�
 
 2. 3D 点云深度学习的挑战主要在于：数据集较小，3D 点云的高维度以及非结构化。
 
-![](https://pic2.zhimg.com/v2-532ae2f3198a165c8b266209b7232f4d_r.jpg)
+![](https://oj84-1259326782.cos.ap-chengdu.myqcloud.com/uPic/2021/07_15_v2-532ae2f3198a165c8b266209b7232f4d_r.jpg)
 
 接下来的文章组织。第二部分主要介绍 3D 形状分类；第三部分介绍 3D 目标检测和跟踪；第四部分介绍点云分割，其中包括语义分割，实例分割以及部分分割。
 
@@ -36,7 +36,7 @@ Introduction：3D 数据通常有许多种表现形式：深度图、点云、�
 
 这类方法使用 MLP 对各个点进行独立的建模，接着使用对称的函数来集成到全局特征。对于无序的 3D 点云数据，这类网络可以得到置换不变性。然而这样的方法并未考虑到 3D 点之间的几何关系。
 
-![](https://pic2.zhimg.com/v2-af5ae28e8a5183e1b0c335bb5dde85cd_r.jpg)
+![](https://oj84-1259326782.cos.ap-chengdu.myqcloud.com/uPic/2021/07_15_v2-af5ae28e8a5183e1b0c335bb5dde85cd_r.jpg)
 
 作为先驱工作，PointNet[5] 使用 MLP 学习 Pointwise 特征，接着使用最大池化层来提取全局的形状特征。最后的分类结果也使用 MLP 来得到。[26] 也论证了，得到置换不变性的关键在于将所有表示加起来并且使用非线性变化。[26] 也设计了基础的网络 DeepSets 来进行多种应用的实现，包括形状分类。
 
@@ -48,7 +48,7 @@ Introduction：3D 数据通常有许多种表现形式：深度图、点云、�
 
 与 2D 卷积相比，由于点云的不规则性，3D 点云的卷积核更难设置。根据卷积核的不同，目前的 3D 卷积网络可以被分为连续卷积网络和离散卷积网络，如下图所示。
 
-![](https://pic2.zhimg.com/v2-54aeddf393933ea09623d806d2968d3d_r.jpg)
+![](https://oj84-1259326782.cos.ap-chengdu.myqcloud.com/uPic/2021/07_15_v2-54aeddf393933ea09623d806d2968d3d_r.jpg)
 
 **3D 连续卷积网络**
 
@@ -64,7 +64,7 @@ Introduction：3D 数据通常有许多种表现形式：深度图、点云、�
 
 基于图的网络将点云中的各个点当做是图中的顶点，然后产生有向边。接着在空间中或谱域中学习特征。典型的基于图的网络如下图所示。
 
-![](https://pic2.zhimg.com/v2-5190b4aed1eef1345402cb8059f5c97d_r.jpg)
+![](https://oj84-1259326782.cos.ap-chengdu.myqcloud.com/uPic/2021/07_15_v2-5190b4aed1eef1345402cb8059f5c97d_r.jpg)
 
 **空间域中的基于图的方法**
 
@@ -82,7 +82,7 @@ Introduction：3D 数据通常有许多种表现形式：深度图、点云、�
 
 **2.2.5 其它网络**
 
-![](https://pic3.zhimg.com/v2-b232d5a1b6548bdf4b3aa2957af8f9a6_r.jpg)
+![](https://oj84-1259326782.cos.ap-chengdu.myqcloud.com/uPic/2021/07_15_v2-b232d5a1b6548bdf4b3aa2957af8f9a6_r.jpg)
 
 **3 3D 物体检测与跟踪**
 
@@ -98,7 +98,7 @@ Introduction：3D 数据通常有许多种表现形式：深度图、点云、�
 
 **3.1.1.1 多视角的方法**
 
-![](https://pic1.zhimg.com/v2-21c5b2c69267095872067fb1abb4819c_r.jpg)
+![](https://oj84-1259326782.cos.ap-chengdu.myqcloud.com/uPic/2021/07_15_v2-21c5b2c69267095872067fb1abb4819c_r.jpg)
 
 这类方法从不同的视角图像（雷达前景图，鸟瞰图，图像等）中融合各个候选框的特征，来产生 3D 旋转盒。在 [4] 中，Chen 等人从鸟瞰图中产生一组准确的 3D 候选框，并且将其投影到其它视角中（雷达前景图，RGB 图像），接着将各个区域的特征组合到一起，来预测有方向的 3D bounding boxes。尽管这种方法在 0.25IOU， 300 个候选框设置时达到了 99.1% 的 recall，但是速度非常慢。后续的基于多视角的 3D 物体检测方法主要从以下两个方面来提升。
 
@@ -110,7 +110,7 @@ Introduction：3D 数据通常有许多种表现形式：深度图、点云、�
 
 这类方法首先利用现有的语义分割技术来移除多数的背景点，接着在前景点上，产生大量的高质量的候选框来节约计算。与多视角的方法 [4],[97],[103] 相比，这类方法达到了更好的物体 recall，并且更适合一些复杂的场景。
 
-![](https://pic2.zhimg.com/v2-5a992f99c6a6b97842acb773f5db3af1_r.jpg)
+![](https://oj84-1259326782.cos.ap-chengdu.myqcloud.com/uPic/2021/07_15_v2-5a992f99c6a6b97842acb773f5db3af1_r.jpg)
 
 [104]中，Yang et al 使用了 2D 的分割网络来预测前景的像素并将其投影至点云中，以此来剔除掉多数的背景点。接着在这些前景点中生成候选框，并且设计了一种新的标准称之为 PointsIoU 来减少候选框的冗余性和模棱两可之处。跟着 [104] 的脚步，[105]提出了 PointRCNN 的框架。具体而言，他们直接对 3D 点云进行分割，得到前景点，并且将语义特征和局部空间特征融合从而得到高质量的 3D boxes。[106] following [105]中的 RPN，提出了一种利用图卷积网络来进行 3D 物体检测。具体而言，利用图卷积，在此处引入了两个模块来修复物体的候选框。第一个模块 R-GCN 利用一个候选框中的所有点，得到每个候选框的特征集成。第二个模块 C-GCN 将所有候选框中的每一帧信息融合起来，利用环境来回归准确的物体 boxes。[107]将点云投影至基于图像的分割网络的输出，将其附加至语义的预测值。[109]得到了显著的性能提升，通过将涂色的点送入至一些检测器中 [105, 108]。[110] 将每个点与 spherical anchor 相关联，每个点的语义值用来移除多余的 anchors。这样的方法得到了更好的 recall 以及有着更小的计算消耗。与此同时，文中提出了 PointsPool 层，对候选框中的内部点学习相容的特征，并且引入了并行的 IOU 来提高位置的准确度的检测性能。实验结果正式这样的方法在 KITTI 数据集 [10] 上较难的集合（car class）的性能比 [99, 105, 111] 的性能优越很多，并达到了 12.5fps。
 
@@ -118,7 +118,7 @@ Introduction：3D 数据通常有许多种表现形式：深度图、点云、�
 
 这类方法首先利用现有的 2D 物体检测子，产生 2D 的候选矩形框，接着对每个 2D 的候选框提取 3D 的锥体候选框，如下图所示。尽管这类方法可以有效地给出 3D 物体的坐标，但 step-by-step 的 pipeline 使得性能受限（受限于 2D 图像的检测子）。
 
-![](https://pic1.zhimg.com/v2-94199e151e5bcfafca8dd03348ceb8a4_r.jpg)
+![](https://oj84-1259326782.cos.ap-chengdu.myqcloud.com/uPic/2021/07_15_v2-94199e151e5bcfafca8dd03348ceb8a4_r.jpg)
 
 F-PointNets[112]为此类方向的先驱工作。它在每个 2D 区域上产生锥形的候选框，并且应用 PointNet[5](或 PointNet++[27])来学习各个 3D 锥体的点云特征，从而进行 3D box 的估计。在随后的工作中，[113]提出了 Point-SENet 模块，来预测一系列的缩放因子，从而被用来突出有用特征和抑制无用特征。同时他们也将 PointSIFT[114]模块集成至网络中，来获取点云的方向信息，其可以得到对形状尺度的强鲁棒性。该方法在 [10], [115] 的数据集上，与 F-PointNets[112]相比得到了显著的提高。
 
@@ -175,7 +175,7 @@ Shi等人[151]受三维物体的地面真实盒提供物体内部零件的准确
 
 KITTI 基准是自动驾驶领域中最有影响力的，并且在学术和工业领域有着广泛的应用。表 2 和表 3 展示了不同方法在 KITTI test 3D and BEV benchmark 上的结果。
 
-![](https://pic2.zhimg.com/v2-9bf3b4bb855322425e1097a6bff8c3ad_r.jpg)![](https://pic1.zhimg.com/v2-51ca86700a6ef0515d87d0fb961ebc88_r.jpg)
+![](https://oj84-1259326782.cos.ap-chengdu.myqcloud.com/uPic/2021/07_15_07_15_v2-9bf3b4bb855322425e1097a6bff8c3ad_r.jpg)![](https://pic1.zhimg.com/v2-51ca86700a6ef0515d87d0fb961ebc88_r.jpg)
 
 可以观察到：
 
@@ -199,7 +199,7 @@ d. 3D 物体跟踪和场景流估计是较新的研究方向。
 
 Intermediate regular representations 可被分成以下几种：多视角表示 [148], [149]、球状表示[150], [151], [152]、体素表示[153], [154], [155]、超多面体晶格表示[156], [157] 以及混合表示[158], [159]。具体可见下图。
 
-![](https://pic2.zhimg.com/v2-66bb7d8c7837d7710d43a886cca19a15_r.jpg)
+![](https://oj84-1259326782.cos.ap-chengdu.myqcloud.com/uPic/2021/07_15_v2-66bb7d8c7837d7710d43a886cca19a15_r.jpg)
 
 **4.1.1.1 多视角表示**
 
@@ -237,7 +237,7 @@ Intermediate regular representations 可被分成以下几种：多视角表示 
 
 **Neighboring feature pooling：** 为了获取局部的几何形式，这类方法通过将局部邻域点集成的方式，对各个点学习特征。具体而言，PointNet++[27] 将点分层次，逐步地分成一些组，如下图所示。多尺度的 grouping 和多分辨率的 grouping 来克服点云多样性造成的问题。之后，[114] 提出了 PointSIFT 模块来实现方向的编码和 scale awareness。该模块通过使用 3 阶段的有向的卷积操作，将 8 个空间方向的信息堆叠并且编码，将多尺度的特征提取并级联来实现对不同尺度的适应性。与 PointNet++ 中使用 GROUPING 的方法不同，[169] 利用 K-Means 聚类和 KNN 的方法在世界空间和特征空间定义两种邻域。基于这样的假设：来自于同一类的点在特征空间中应当接近，该论文提出了 pairwise distance loss and a centroid loss 来对特征学习进行正则。为了建模点与点之间的相互关系，[31] 提出了 PointWeb 来寻找局部区域内所有点对之间的关系。[170] 提出了置换不变性的卷积称之为 Shellconv。[95] 提出了有效、轻量的网络称为 RandLA-Net 实现大规模的点云处理。该方法利用随机样本采样，在内存和计算方面提升很多。提出的局部特征集成用来获取和保持几何特征。
 
-![](https://pic3.zhimg.com/v2-fddd48034e333a5205012613873e51e2_r.jpg)
+![](https://oj84-1259326782.cos.ap-chengdu.myqcloud.com/uPic/2021/07_15_v2-fddd48034e333a5205012613873e51e2_r.jpg)
 
 **Attention-based aggregation：**为了进一步提升分割的准确率，[90]针对点云分割，提出了基于注意力的机制。[29]提出了组随机注意力机制 (group shuffle attention) 来建模点之间的关系，并且提出了具有置换不变性、task-agnostic 以及可微分的 Gumbel Subset Sampling(GSS)来替代被广泛应用的 Furthest Point Sampling(FPS)方法。该方法对离群点不敏感，并且可以选择具有代表性的点的子集。为了更好地获取点云的空间分布，[171]提出了 Local Spatial Aware(LSA)层来学习空间感知权重。与 CRF 类似，[172]提出了 Attention-based Score Refinement(ASR)模块对分割的结果进行后处理。初始分割结果通过 pooling 的方式进行修正。该模块很容易被集成至其他的深度网络中来提升分割效果。
 
@@ -259,7 +259,7 @@ Intermediate regular representations 可被分成以下几种：多视角表示 
 
 与语义分割相比，实例分割更具有挑战性因为它需要更准确和更小的细粒度，具体而言，他不仅需要将有着不同语义的点分辨出来，还需要将有着相同语义的实例分出来。总体而言，目前的方法可分为两个方向：基于候选框的方法以及不需要候选框的方法。一些里程碑式的方法具体见下图。
 
-![](https://pic4.zhimg.com/v2-78929e54a8fc6476464ba71b8f0847ef_r.jpg)
+![](https://oj84-1259326782.cos.ap-chengdu.myqcloud.com/uPic/2021/07_15_v2-78929e54a8fc6476464ba71b8f0847ef_r.jpg)
 
 **4.2.1 Proposal-based Methods**
 
@@ -291,7 +291,7 @@ Intermediate regular representations 可被分成以下几种：多视角表示 
 
 下表展示了已有方法在公开数据集上的结果，包括：S3DIS[176], Semantic3D[9], ScanNet[102] 和 SemanticKITTI[177].
 
-![](https://pic4.zhimg.com/v2-64ada45fef0cda311eb24920ab47014b_r.jpg)
+![](https://oj84-1259326782.cos.ap-chengdu.myqcloud.com/uPic/2021/07_15_07_15_v2-64ada45fef0cda311eb24920ab47014b_r.jpg)
 
 接下来这些问题需要进一步的探索。
 
