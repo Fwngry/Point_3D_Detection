@@ -28,7 +28,7 @@ Shaoshuai Shi - 港中文 - PointRCNN、PA^2^Net、PV-RCNN作者
 
 进度 安装环境
 
-
+[Bilibili分享汇报：CharliesQi - 3D物体检测算法和未来方向](https://www.bilibili.com/video/BV1wA411p7FZ/?spm_id_from=333.788.recommend_more_video.1) 2021/7/17 🏃‍♀️
 
 ----
 
