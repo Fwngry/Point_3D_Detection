@@ -32,7 +32,7 @@ Shaoshuai Shi - 港中文 - PointRCNN、PA^2^Net、PV-RCNN作者
 
 ----
 
-## 四、已读
+## 四、已完成
 
 [Bilibili 分享汇报：港中文 - 3D目标检测系列methods介绍 - PointRCNN & P^2Net & PV-RCNN - 2020 Feb](https://www.bilibili.com/video/BV1E741177wr?from=search&seid=8492363675717627619) 2021/7/16 ✅ ♻️ ⭐️⭐️⭐️⭐️⭐️
 
